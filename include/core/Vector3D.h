@@ -10,16 +10,16 @@ public:
     Vector3D(float x, float y, float z);
 
     // Vector operations
-    Vector3D add(const Vector3D& a, const Vector3D& b);
-    Vector3D sub(const Vector3D& a, const Vector3D& b);
-    Vector3D mult(const Vector3D& a, float scalar);
-    Vector3D div(const Vector3D& a, float scalar);
+    Vector3D add(const Vector3D& other) const;
+    Vector3D sub(const Vector3D& other) const;
+    Vector3D mult(float scalar) const;
+    Vector3D div(float scalar) const;
 
-    Vector3D dot(const Vector3D& a, const Vector3D& b);
-    Vector3D cross(const Vector3D& a, const Vector3D& b);
+    float dot(const Vector3D& other) const;
+    Vector3D cross(const Vector3D& other) const;
 
-    Vector3D magnitude(const Vector3D& a);
-    Vector3D normalize(const Vector3D& a);
+    float magnitude() const;
+    Vector3D normalize() const;
 };
 
 #endif

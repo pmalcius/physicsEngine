@@ -20,6 +20,13 @@ public:
 
     float magnitude() const;
     Vector3D normalize() const;
+
+    // Operator overloads (delegate to named methods above)
+    Vector3D operator+(const Vector3D& other) const;
+    Vector3D operator-(const Vector3D& other) const;
+    Vector3D operator*(float scalar) const;
+    Vector3D operator/(float scalar) const;
+    bool operator==(const Vector3D& other) const;
 };
 
 #endif

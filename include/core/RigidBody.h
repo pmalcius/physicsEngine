@@ -12,8 +12,8 @@ public:
     RigidBody(Vector3D position, float mass);
 
     // Methods
-    void applyForce(const Vector3D& force); // Apply a force to the object
-    void update(float deltaTime);          // Update position and velocity
+    void setPosition(const Vector3D& newPosition); // Set the object's position
+    void setVelocity(const Vector3D& newVelocity);  // Set the object's velocity
 
     // Getters (optional, for accessing private variables)
     Vector3D getPosition() const;

@@ -33,7 +33,7 @@ float Vector3D::dot(const Vector3D& other) const {
 
 // Cross product
 Vector3D Vector3D::cross(const Vector3D& other) const  {
-    return Vector3D(((y*other.z)-(z*other.y)), ((x*other.z) - (z*other.x)), ((x*other.y) - (y*other.x)));
+    return Vector3D((y*other.z - z*other.y), (z*other.x - x*other.z), (x*other.y - y*other.x));
 }
 
 // Magnitude
@@ -48,4 +48,13 @@ Vector3D Vector3D::normalize() const {
         return Vector3D(0, 0, 0);
     }
     return Vector3D(x/mag, y/mag, z/mag);
+}
+
+// Operator overloads
+Vector3D Vector3D::operator+(const Vector3D& other) const { return add(other); }
+Vector3D Vector3D::operator-(const Vector3D& other) const { return sub(other); }
+Vector3D Vector3D::operator*(float scalar) const         { return mult(scalar); }
+Vector3D Vector3D::operator/(float scalar) const         { return div(scalar); }
+bool     Vector3D::operator==(const Vector3D& other) const {
+    return x == other.x && y == other.y && z == other.z;
 }
